@@ -1,0 +1,13 @@
+# Byte-compiled
+__pycache__/
+
+problems.txt
+models.py
+test.py
+
+# Packaging
+build/
+.venv/
+.env
+
+pgdata

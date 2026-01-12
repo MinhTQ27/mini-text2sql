@@ -1,0 +1,38 @@
+QUERY_TABLE_NAME: >
+    SELECT table_name 
+    FROM information_schema.tables 
+    WHERE table_schema='public'
+
+QUERY_COLUMN_DETAIL: > 
+    SELECT column_name, data_type 
+    FROM information_schema.columns 
+    WHERE table_name=(%s)
+
+TEXT2SQL_PROMPT: |+ 
+    You are an assistant designed to interact with a SQL database.
+    Given an input question, create a syntactically correct postgresql query to run.
+    Your query should be in one line
+    You should produce ONLY the complete SQL statement.
+    The database contain following tables:
+
+FEW_SHOT_TEXT2SQL: |+
+
+    Here are some examples of how you should respond:
+    Example 1: 
+       + Question: "How many actors are there?"
+       + Answer: "SELECT COUNT(*) from actor;"
+    Example 2: 
+       + Question: "Which films did Penelope Guiness act in?"
+       + Answer: "SELECT f.title FROM actor a JOIN film_actor fa ON a.actor_id = fa.actor_id JOIN film f ON fa.film_id = f.film_id WHERE a.last_name = 'Guiness' AND a.first_name = 'Penelope' ORDER BY f.title;"
+    Example 3:
+       + Question: "In which year was the film 'Closer Bang' released?"
+       + Answer: "SELECT release_year FROM film WHERE title = 'Closer Bang'"
+
+INSIGHT_PROMPT: |+
+
+    Following are user question, SQL query and result from running the query:
+    - {user_question}
+    - {sql_query}
+    - {query_result} 
+
+    Based on the previous question, corresponding SQL query, and SQL result, answer the user question.

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools >= 77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mini-text2sql"
+version = "0.1"
+description = "A project for learning tech"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "MinhTQ27"}
+]
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.1",
+    "python-dotenv==1.2.1",
+    "psycopg==3.3.2",
+    "openai==2.15.0",
+    "Flask-SQLAlchemy==3.1.1",
+    "SQLAlchemy==2.0.45",
+    "requests==2.32.5"
+]

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <title>Edit form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8 col-x1-6">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">Back to home</a>
+                        </li>
+                    </ol>
+                </nav>
+                {{record}}
+                <div class="card rounded-3">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="mb-4 pb-2 pd-md--0 mb-md-5 px-md-2 text-center">Edit {{table}}</h2>
+                        <form method="POST" action="/adduser">
+                            {% for col in columns %}
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">{{ col }}</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="{{ col }}" value="{{ record[col] }}">
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <br>
+                            <br>
+                            <button type="submit" class="btn btn-success text-center">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

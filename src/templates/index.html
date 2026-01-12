@@ -1,0 +1,35 @@
+<!DOCTYPE html5>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-lg">
+        <div class="d-flex justify-content-center" style="background-color: #8bf78b; font-weight: 700;">
+            <p class="fw-bold fs-1 mt-3">Text2SQL Mini-Project</p>
+        </div>
+        <p class="fw-bold fs-2 p-5 text-center">Your Data</p>
+        <div class="row">
+            <div class="col-10">
+                <p class="fw-bolder fs-4 p-3 text-center text-decoration-underline" style="color: #2761F5;">Records</p>
+                {% include 'components/data-display.html' %}
+            </div>
+            <div class="col-2">
+                <p class="fw-bolder fs-4 p-3 text-center text-decoration-underline" style="color: #2761F5;">Tables</p>
+                {% include 'components/tables-list.html' %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

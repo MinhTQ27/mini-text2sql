@@ -1,0 +1,25 @@
+Flask: if...: app.run('0.0.0.0', 5000) to run serve when "python app.py"
+       def ..(): return render_template()
+       structure function with argument app=Flask() to call when __name__ = '__main__'
+       a module: db = SQLAlchemy()
+       a module: class X: DEBUG=True / ALCHEMY_DATABSE_URI=... --> app.config.from_object(X); SQLALCHEMY_TRACK_MODIFICATIONS=False
+       Migrate(app, db)
+       route.py: main = Blueprint('main', __name__)
+       Create OR M
+
+class X:    
+    id = ...
+    name = ...
+    ....   
+    @property
+    def data(self):
+        return {
+            'id': self.id,
+        }
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+<link href=bootstrap...
+
+
