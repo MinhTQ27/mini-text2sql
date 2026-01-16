@@ -1,4 +1,35 @@
 # mini-text2sql
+```
+mini-text2sql/
+├── docker-compose.yml
+├── flask_text2sql.Dockerfile
+├── LICENSE
+├── Makefile
+├── pyproject.toml
+├── README.md
+└── src/
+    ├── app.py
+    ├── configs.yaml
+    ├── crud/
+    │   └── crud_service.py
+    ├── demo.sh
+    ├── happiness_index.sql
+    ├── models.py
+    ├── pgdata/
+    │   └── pgdata.tar
+    ├── templates/
+    │   ├── components/
+    │   │   ├── data-display.html
+    │   │   ├── llm-chat.html
+    │   │   └── tables-list.html
+    │   ├── edit_form.html
+    │   ├── index.html
+    │   └── table_page.html
+    └── text2sql/
+        ├── langchain_text2sql.ipynb
+        ├── Text2Sql.py
+        └── text2sql_service.py
+```
 
 docker exec -it postgres_db bash
 
