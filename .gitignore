@@ -11,3 +11,5 @@ build/
 .env
 
 pgdata
+
+notes.txt

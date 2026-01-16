@@ -1,6 +1,0 @@
-app
-crud
-models
-pgdata
-templates
-text2sql
